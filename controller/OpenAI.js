@@ -4,10 +4,10 @@ module.exports.ansByOpenAi=async(question)=>{
         
   const options = {
     method: 'POST',
-    url: 'https://chatgpt-42.p.rapidapi.com/conversationgpt4-2',
+    url: 'https://open-ai21.p.rapidapi.com/conversationpalm2',
     headers: {
-      'x-rapidapi-key': '96fc290c14mshdfa4f5da667db68p14ec6fjsndc5b6ac927dc',
-      'x-rapidapi-host': 'chatgpt-42.p.rapidapi.com',
+      'x-rapidapi-key': 'c34fdd3bb7msh3180af08efc4d8dp11d8a6jsn02b1363d5836',
+      'x-rapidapi-host': 'open-ai21.p.rapidapi.com',
       'Content-Type': 'application/json'
     },
     data: {
@@ -16,18 +16,12 @@ module.exports.ansByOpenAi=async(question)=>{
           role: 'user',
           content: question
         }
-      ],
-      system_prompt: '',
-      temperature: 0.9,
-      top_k: 5,
-      top_p: 0.9,
-      max_tokens: 256,
-      web_access: false
+      ]
     }
   };
           try {
             const response = await axios.request(options);
-            const answer= response.data.result
+            const answer= response.data.BOT
             
             return answer
         } catch (error) {
